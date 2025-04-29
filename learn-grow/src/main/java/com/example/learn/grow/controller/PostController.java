@@ -28,12 +28,12 @@ public class PostController {
 
     private final PostService postService;
 
-    @GetMapping("/posts")
+    @GetMapping("/post")
     public List<Post> getAllPosts() {
         return postService.getAllPosts();
     }
 
-    @GetMapping("/posts/{id}")
+    @GetMapping("/post/{id}")
     public Post getPost(@PathVariable Long id) {
         return postService.getPostById(id);
     }
