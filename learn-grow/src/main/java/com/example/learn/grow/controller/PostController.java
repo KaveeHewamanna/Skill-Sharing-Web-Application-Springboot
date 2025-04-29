@@ -42,4 +42,11 @@ public class PostController {
     public Post createPost(@RequestBody Post post) {
         return postService.createPost(post);
     }
+    //Create put method to update post
+    @PutMapping("/{id}")
+    public Post updatePost(@PathVariable Long id, @RequestBody Post postDetails) {
+        return postService.updatePost(id, postDetails);
+    }
+
+    
 }
