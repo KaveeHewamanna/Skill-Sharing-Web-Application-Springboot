@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../CSS Files/PostSharePage.css';
-
+//Create page for post upload
 
 const PostSharePage = () => {
   const [caption, setCaption] = useState('');
