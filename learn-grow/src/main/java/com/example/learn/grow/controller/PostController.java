@@ -1,5 +1,6 @@
 package com.example.learn.grow.controller;
 
+//Create controller class
 import com.example.learn.grow.model.Post;
 
 import lombok.RequiredArgsConstructor;
