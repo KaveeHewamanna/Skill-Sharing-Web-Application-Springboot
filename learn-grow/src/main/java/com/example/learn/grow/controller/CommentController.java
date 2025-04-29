@@ -18,7 +18,7 @@ import lombok.RequiredArgsConstructor;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api") // Base URL for all endpoints in this controller
 @RequiredArgsConstructor
 @CrossOrigin("*") // Allows cross-origin requests from any domain
 
@@ -35,6 +35,12 @@ public class CommentController {
     public ResponseEntity<List<Comment>> getAllComments() {
         return ResponseEntity.ok(commentService.getAllComments());
     }
+
+    /**
+     * GET /api/comments/{id}
+     * Retrieves a single comment by its ID.
+     * @param id ID of the comment
+     */
 
     @GetMapping("/comments/{id}")
     public ResponseEntity<Comment> getComment(@PathVariable Long id) {
