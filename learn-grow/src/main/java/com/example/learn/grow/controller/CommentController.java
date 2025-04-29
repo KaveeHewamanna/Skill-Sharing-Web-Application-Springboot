@@ -46,6 +46,12 @@ public class CommentController {
     public ResponseEntity<Comment> getComment(@PathVariable Long id) {
         return ResponseEntity.ok(commentService.getCommentById(id));
     }
+    
+    /**
+     * POST /api/comment
+     * Creates a new comment.
+     * @param comment Comment object to be created
+     */
 
     @PostMapping("/comment")
     public ResponseEntity<Comment> createComment(@RequestBody Comment comment) {
