@@ -12,6 +12,8 @@ import lombok.Data;
 @Entity
 @Table(name = "posts")
 
+//Create model class
+
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
