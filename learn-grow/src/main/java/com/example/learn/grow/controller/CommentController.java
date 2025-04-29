@@ -70,6 +70,12 @@ public class CommentController {
         return ResponseEntity.ok(commentService.updateComment(id, comment));
     }
 
+    /**
+     * DELETE /api/comments/{id}
+     * Deletes a comment by its ID.
+     * @param id ID of the comment to delete
+     */
+
     @DeleteMapping("/comments/{id}")
     public ResponseEntity<Void> deleteComment(@PathVariable Long id) {
         commentService.deleteComment(id);
