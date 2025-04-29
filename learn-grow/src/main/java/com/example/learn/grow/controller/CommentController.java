@@ -20,11 +20,16 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
-@CrossOrigin("*")
+@CrossOrigin("*") // Allows cross-origin requests from any domain
 
 public class CommentController {
 
     private final CommentService commentService;
+
+    /**
+     * GET /api/comments
+     * Retrieves a list of all comments.
+     */
 
     @GetMapping("/comments")
     public ResponseEntity<List<Comment>> getAllComments() {
