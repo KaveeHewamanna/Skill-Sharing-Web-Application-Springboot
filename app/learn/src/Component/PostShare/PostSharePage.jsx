@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import '../../CSS Files/PostSharePage.css';
-//Create page for post upload
+import '../../CSS Files/PostSharePage.css'; // Ensure the path is correct
 
 const PostSharePage = () => {
   const [caption, setCaption] = useState('');
@@ -14,43 +13,50 @@ const PostSharePage = () => {
   };
 
   const handleShare = () => {
-    alert('Post shared successfully!');
-    // Add your upload logic here
+    alert('✅ Post shared successfully!');
     setCaption('');
     setImage(null);
   };
 
   return (
-    <div className="post-share-container">
-      <h2 className="heading">Create Post</h2>
-      <div className="card">
-        <div className="profile">
+    <div className="post-share-wrapper">
+      <div className="post-share-card">
+        <h2 className="post-title">📸 Create New Post</h2>
+
+        <div className="post-profile">
           <img
             src="https://via.placeholder.com/40"
             alt="Profile"
-            className="avatar"
+            className="post-avatar"
           />
-          <span className="username">your_username</span>
+          <span className="post-username">@your_username</span>
         </div>
 
         <textarea
-          className="caption-input"
-          placeholder="Write a caption..."
+          className="post-caption-input"
+          placeholder="Write something meaningful..."
           value={caption}
           onChange={(e) => setCaption(e.target.value)}
         />
 
-        {image && <img src={image} alt="Preview" className="preview-image" />}
+        {image && (
+          <div className="image-preview-container">
+            <img src={image} alt="Preview" className="post-preview-image" />
+          </div>
+        )}
 
-        <input
-          type="file"
-          accept="image/*"
-          className="file-input"
-          onChange={handleImageChange}
-        />
+        <label className="image-upload-label">
+          📁 Upload Image
+          <input
+            type="file"
+            accept="image/*"
+            className="image-upload-input"
+            onChange={handleImageChange}
+          />
+        </label>
 
-        <button className="share-button" onClick={handleShare}>
-          Share
+        <button className="post-share-btn" onClick={handleShare}>
+          🚀 Share Post
         </button>
       </div>
     </div>
