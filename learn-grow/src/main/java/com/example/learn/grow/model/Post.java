@@ -17,7 +17,7 @@ import lombok.Data;
 public class Post {
     
     //Create variables
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,5 +27,14 @@ public class Post {
 
     private String description;
 
+    // Default constructor (required by JPA)
+    public Post() {
+    }
+
+    // Constructor with fields (optional)
+    public Post(String title, String description) {
+        this.title = title;
+        this.description = description;
+    }
 
 }
