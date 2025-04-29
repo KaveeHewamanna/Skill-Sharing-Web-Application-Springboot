@@ -27,17 +27,14 @@ public class Post {
 
     private String description;
 
-    private String filePath;
-
     // Default constructor (required by JPA)
     public Post() {
     }
 
     // Constructor with fields (optional)
-    public Post(String title, String description,String filePath) {
+    public Post(String title, String description) {
         this.title = title;
         this.description = description;
-        this.filePath = filePath;
     }
 
     
