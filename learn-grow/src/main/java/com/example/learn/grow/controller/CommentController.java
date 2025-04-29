@@ -46,7 +46,7 @@ public class CommentController {
     public ResponseEntity<Comment> getComment(@PathVariable Long id) {
         return ResponseEntity.ok(commentService.getCommentById(id));
     }
-    
+
     /**
      * POST /api/comment
      * Creates a new comment.
@@ -57,6 +57,13 @@ public class CommentController {
     public ResponseEntity<Comment> createComment(@RequestBody Comment comment) {
         return ResponseEntity.ok(commentService.createComment(comment));
     }
+
+    /**
+     * PUT /api/comments/{id}
+     * Updates an existing comment by its ID.
+     * @param id ID of the comment to update
+     * @param comment Updated comment data
+     */
 
     @PutMapping("/comments/{id}")
     public ResponseEntity<Comment> updateComment(@PathVariable Long id, @RequestBody Comment comment) {
