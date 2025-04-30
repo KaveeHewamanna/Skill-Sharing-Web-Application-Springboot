@@ -17,6 +17,11 @@ public class CommentService {
         return commentRepository.findAll();
     }
 
+    public Comment getCommentById(Long id) {
+        return commentRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Comment not found"));
+    }
+
 
     
 }
