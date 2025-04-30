@@ -27,6 +27,8 @@ public class Post {
 
     private String description;
 
+    private String filePath;
+
     // Default constructor (required by JPA)
     public Post() {
     }
@@ -35,6 +37,8 @@ public class Post {
     public Post(String title, String description) {
         this.title = title;
         this.description = description;
+        // this.filePath = filePath;
+        
     }
 
     

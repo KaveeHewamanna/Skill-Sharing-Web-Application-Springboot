@@ -17,6 +17,9 @@ public class PostService {
 
     private final PostRepository postRepository;
 
+    // private static final String UPLOAD_DIR = "uploads/";
+
+
     public List<Post> getAllPosts() {
         return postRepository.findAll();
     }
