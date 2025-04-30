@@ -22,6 +22,11 @@ public class CommentService {
                 .orElseThrow(() -> new RuntimeException("Comment not found"));
     }
 
+    
+    public Comment createComment(Comment comment) {
+        return commentRepository.save(comment);
+    }
+
 
     
 }
