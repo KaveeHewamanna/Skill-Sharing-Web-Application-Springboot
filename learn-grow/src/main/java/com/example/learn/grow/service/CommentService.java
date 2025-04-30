@@ -22,11 +22,16 @@ public class CommentService {
                 .orElseThrow(() -> new RuntimeException("Comment not found"));
     }
 
-    
     public Comment createComment(Comment comment) {
         return commentRepository.save(comment);
     }
 
+    public Comment updateComment(Long id, Comment updatedComment) {
+        Comment existingComment = getCommentById(id);
+        existingComment.setAuthor(updatedComment.getAuthor());
+        existingComment.setContent(updatedComment.getContent());
+        return commentRepository.save(existingComment);
+    }
 
     
 }
