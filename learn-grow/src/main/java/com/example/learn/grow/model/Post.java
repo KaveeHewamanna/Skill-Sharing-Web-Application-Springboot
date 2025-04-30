@@ -37,7 +37,7 @@ public class Post {
     public Post(String title, String description) {
         this.title = title;
         this.description = description;
-        // this.filePath = filePath;
+        
         
     }
 
